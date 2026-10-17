@@ -1,0 +1,157 @@
+Git: https://github.com/adashofdata/nlp-in-python-tutorial
+
+NLP
+----
+--computer processing natural languages
+--How to deal with text data
+--Falls under Artificial Intelligence
+--NLP techniques can be used for sentiment analysis
+  (looking into text and finding out positive or negative 
+   emotion)
+--NLP can be used for Topic Modelling ie 
+  tagging/labelling items under a particular category
+--Text Generation (ex: generating some random quotes)
+
+===========
+Analytics > Data Science > Getting meaning out of data
+(Needed : Programming Skills + Math & Stats + Communication)
+
+Programming:
+ Data Analysis : Pandas, sklearn, re(regular expressions)
+ NLP libraries : nltk, TextBlob, gensim (mainly for topic modelling)
+
+Math & Stats : Clean (corpus, document-term matrix)
+    	       EDA*(word counts)
+               NLP(sentiment analysis, topic modelling, text generation)
+
+==================
+ Q : What makes Ali Wong's comedy routine stand out?
+----where are we going to get this data?
+----how much data should we get?which comedians?what time range?
+----define the scope of project based on your domain expertise
+
+In this case scope was decided by
+--stand up comedy specials from past 5 years
+--atleast a 7.5 rating with 2000+ votes on IMDB
+
+Data Gathering:Python packages
+Web scraping : 
+Requests
+ (enter a URL and get all data from that URL)
+ Formal : Make HTTP requests
+ Simple : Get info from a website
+
+Beautiful Soup
+ (Looks into HTML page and get sections from the page)
+ Formal: Parse HTML documents
+ Simple: Extract parts of a website
+
+Pickle
+(save the objects for later usage)
+Formal: Serialize Python Objects
+Simple : Save data for later
+
+Goal: Gather data and clean data for further analysis
+
+Format#1: Corpus (Corpus is collection of texts)
+Format#2: Creating Document-term Matrix
+          --Clean Text - remove execess, unnecessary parts of text
+          --Tokenize Text - split the text into smaller pieces
+          --Document Term Matrix - put into a matrix so a machine can read it
+
+Example : 1st line of John 
+" All right, Petunia. Wish me luck out there.
+You will die on August 7th, 2037"
+
+--Cleaning text
+removing punctuation
+lowercase letters
+remove numbers
+
+resultant text
+"all right petunia wish me luck out there you will die in august"
+
+This could be done using "re"
+Python's package to search patterns and clean our data
+
+--Tokenize the data
+breaking data into smaller chunks
+  tokenize by sentences/bi-grams/words
+
+result would be
+all	right	petunia	  wish	me 
+luck	out	there	  you	will
+die	on	august	  
+
+--Now that every word is its own token, we can filter out words that
+have less meaning (stop words)
+
+result 
+right petunia wish luck die august
+
+The above representation of text is called "bag of words"
+This format ignores order.
+
+--storing words for multiple similar documents, we will put
+these into a matrix i.e. creating Document Term Matrix
+  each row is a different document
+  each column is a different term(words/bi-grams)
+  values are word counts
+
+Comedian	  night 	petunia		wish	me
+John Mulaney	  1		1		1	1
+Ali Wong	  0		0		0	0
+Dave Chappelle	  0		0		0	0
+
+Note** We used 'Count Vectorizer' from sklearn for the above result
+
+----working----
+--Data-Cleaning.ipynb
+Look into 'scrapsfromtheloft.com' will show the transcript and data [inspect element and check for 'post-content' for a particular transcript]
+
+=========================================
+Exploratory Data Analysis
+---------------------
+Input : Text in some standard format (a corpus and document-term matrix)
+EDA : Goal is to summarize the main charascteristics of data (often using visual mthod)
+Output : to see if data makes sense
+
+Exploring Data:
+--top words: find most common words for each comedian
+--Vocabulary: take a look at unique number of words used
+--Amount of profanity : note the number of swear words used
+
+Top words : Document term matrix can help for this
+	    Aggregate this data to find the top words
+Visualize : to find top words (wordcloud/matplotlib)
+Insights: extract some key takeways
+
+----working----
+--Exploratory-Data-Analysis.ipynb---
+=========================================
+NLP Techniques:
+Input : clean data , plus verify that the data makes sense
+NLP Techniques : advanced analysis techniques, in this case , they are specifically designed for text data
+Output: additional insights about out data to help us answer our question ("How is ali wong different")
+
+
+
+
+
+	
+
+
+
+
+
+ 
+
+
+
+
+
+               
+
+
+
+
