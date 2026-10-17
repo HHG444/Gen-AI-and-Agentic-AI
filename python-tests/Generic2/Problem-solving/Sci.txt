@@ -1,0 +1,8 @@
+Name,Field,Born,NobelPrize
+Amie,math,1815,no
+emy,science,1882,no
+Marie,physics,1867,yes
+Tuyo,chemistry,1930,yes
+Ada,chemistry,1939,yes
+Vera,astronomy,1928,no
+sally,physics,1951,no
